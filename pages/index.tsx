@@ -8,7 +8,7 @@ export default function Home() {
   return (
       <div>
 
-        <PageHero></PageHero>
+        <PageHero title="Find issue to work"></PageHero>
 
         <div className="container">
           <div className="row justify-content-center">

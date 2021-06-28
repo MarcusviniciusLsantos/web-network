@@ -1,14 +1,14 @@
 import { GetStaticProps } from 'next'
 import { useEffect, useState } from 'react';
 
-export default function PageHero() {
+export default function PageHero({title}) {
     return (
         <div className="banner bg-bepro-blue mb-4">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-10">
                         <div className="d-flex flex-column">
-                            <h1 className="h1 mb-0">Find issues to work</h1>
+                            <h1 className="h1 mb-0">{title}</h1>
                             <div className="row">
                                 <div className="col-md-3">
                                     <div className="top-border">
