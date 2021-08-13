@@ -5,9 +5,11 @@ import WebThreeDialog from '../components/web3-dialog';
 import Head from 'next/head'
 import MainNav from '../components/main-nav';
 import ApplicationContextProvider from '../contexts/application';
+import MobileInformation from '../components/mobile-information';
 
 export default function App({Component, pageProps}: AppProps) {
   return (<>
+  <MobileInformation/>
     <ApplicationContextProvider>
       <Head> <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
