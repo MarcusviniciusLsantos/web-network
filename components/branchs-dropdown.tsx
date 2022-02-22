@@ -37,6 +37,7 @@ export default function BranchsDropdown({
         options={options}
         onChange={onSelected}
         placeholder={t("forms.select-placeholder")}
+        id="select_branch"
       />
     </div>
   );

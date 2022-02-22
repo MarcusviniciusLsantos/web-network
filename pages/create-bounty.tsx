@@ -203,7 +203,9 @@ export default function PageCreateIssue() {
               <h3 className="mb-4 text-white">{t('misc.details')}</h3>
               <div className="form-group mb-4">
                 <label className="caption-small mb-2">{t('create-bounty:fields.title.label')}</label>
-                <input type="text"
+                <input 
+                       id="title"
+                       type="text"
                        className="form-control rounded-lg" placeholder={t('create-bounty:fields.title.placeholder')}
                        value={issueTitle}
                        onChange={e => setIssueTitle(e.target.value)}
@@ -213,6 +215,7 @@ export default function PageCreateIssue() {
               <div className="form-group">
                 <label className="caption-small mb-2">{t('create-bounty:fields.description.label')}</label>
                 <textarea className="form-control" rows={6} placeholder={t('create-bounty:fields.description.placeholder')}
+                          id="description"
                           value={issueDescription}
                           onChange={e => setIssueDescription(e.target.value)}/>
               </div>
@@ -230,6 +233,7 @@ export default function PageCreateIssue() {
               <div className="row">
                 <div className="col">
                   <InputNumber
+                    id="amount"
                     thousandSeparator
                     max={balance}
                     className={clsx({'text-muted': isTransactionalTokenApproved})}

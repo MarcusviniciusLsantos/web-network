@@ -14,6 +14,7 @@ interface InternalLinkProps {
   uppercase?: boolean
   iconBefore?: boolean
   activeClass?: string
+  id?: string
 }
 
 export default function InternalLink({
@@ -24,6 +25,7 @@ export default function InternalLink({
   iconBefore = false,
   uppercase = false,
   activeClass,
+  id = "account",
   ...props
 }: InternalLinkProps) {
   const { asPath } = useRouter()
@@ -50,7 +52,7 @@ export default function InternalLink({
 
   return (
     <Link href={props.href} passHref>
-      <a className={getClasses()}>
+      <a className={getClasses()} id={id}>
         {(iconBefore && props.icon) || ``}
         {props.label && <span>{props.label}</span> || ``}
         {(!iconBefore && props.icon) || ``}

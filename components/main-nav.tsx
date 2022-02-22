@@ -130,7 +130,7 @@ export default function MainNav() {
 
             <InternalLink href="/account" icon={<BeproSmallLogo />} label={formatNumberToNScale(beproBalance)} className="mx-3" transparent nav />
 
-            <InternalLink href="/account" icon={<BalanceAddressAvatar address={address} balance={ethBalance} currency={CURRENCY} />} className="meta-info d-flex align-items-center" />
+            <InternalLink id="accountAddress" href="/account" icon={<BalanceAddressAvatar address={address} balance={ethBalance} currency={CURRENCY} />} className="meta-info d-flex align-items-center" />
           </div>
         </ConnectWalletButton>
       </div>
