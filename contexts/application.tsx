@@ -35,6 +35,7 @@ import { BeproService } from "services/bepro-service";
 
 
 import { changeStakedState } from "./reducers/change-staked-amount";
+import { changeNetworkId } from "./reducers/change-network-id";
 
 interface GlobalState {
   state: ApplicationState;
@@ -68,6 +69,7 @@ const defaultState: GlobalState = {
     microServiceReady: null,
     myTransactions: [],
     network: "",
+    networkId: null,
     githubLogin: "",
     accessToken: "",
     isTransactionalTokenApproved: false,
@@ -113,6 +115,7 @@ export default function ApplicationContextProvider({ children }) {
     if (!window.ethereum) return;
 
     window.ethereum.on("chainChanged", (evt) => {
+      dispatch(changeNetworkId(+evt?.toString()));
       dispatch(changeNetwork((NetworkIds[+evt?.toString()] || "unknown")?.toLowerCase()));
     });
 
