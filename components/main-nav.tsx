@@ -31,8 +31,7 @@ import { truncateAddress } from "helpers/truncate-address";
 import useNetwork from "x-hooks/use-network";
 
 const CURRENCY = process.env.NEXT_PUBLIC_NATIVE_TOKEN_NAME;
-const REQUIRED_NETWORK =
-  process.env.NEXT_PUBLIC_NEEDS_CHAIN_NAME?.toLowerCase();
+const REQUIRED_NETWORK_ID = Number(process.env.NEXT_PUBLIC_NEEDS_CHAIN_ID);
 
 export default function MainNav() {
   const { pathname } = useRouter();
@@ -166,7 +165,7 @@ export default function MainNav() {
             <HelpIcon />
           </Button>
 
-          <WrongNetworkModal requiredNetwork={REQUIRED_NETWORK} />
+          <WrongNetworkModal requiredNetworkId={REQUIRED_NETWORK_ID} />
 
           <ConnectWalletButton>
             <div className="d-flex account-info align-items-center">
