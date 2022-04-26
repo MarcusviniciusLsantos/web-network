@@ -34,8 +34,8 @@ import { ReduceActor } from "interfaces/reduce-action";
 import { BeproService } from "services/bepro-service";
 
 
-import { changeStakedState } from "./reducers/change-staked-amount";
 import { changeNetworkId } from "./reducers/change-network-id";
+import { changeStakedState } from "./reducers/change-staked-amount";
 
 interface GlobalState {
   state: ApplicationState;
