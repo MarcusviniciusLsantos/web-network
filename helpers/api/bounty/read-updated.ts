@@ -25,7 +25,8 @@ export default async function readBountyUpdated(events, network: Network_v2, cus
         
         if (bounty) {
           bounty.amount = networkBounty.tokenAmount;
-
+          bounty.fundingAmount = networkBounty.fundingAmount;
+          
           await bounty.save();
 
           updatedBounties.push(networkBounty.cid);

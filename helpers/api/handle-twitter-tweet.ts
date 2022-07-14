@@ -54,6 +54,7 @@ export default function twitterTweet({
     repository_id: number;
     title: string;
     amount: number;
+    fundingAmount: number;
     state: IssueState;
     githubId: string;
   };
@@ -79,10 +80,12 @@ export default function twitterTweet({
     const issueTitle =
       issue.title.length > 30 ? issue.title.slice(0, 30) + "..." : issue.title;
     const amount: string | number = formatNumberToNScale(issue.amount);
+    const fundingAmount: string | number = formatNumberToNScale(issue.fundingAmount)
 
     if (type === "bounty" && action === "created") {
       title = "Alert";
-      body = `${issueTitle} and earn up to ${amount} ${currency}`;
+      body = amount > 0 && `${issueTitle} and earn up to ${amount} ${currency}`
+      body = fundingAmount > 0 && `${issueTitle} and earn up to ${fundingAmount} ${currency}`
     }
     if (type === "bounty" && action === "changes") {
       title = "Status Update";
